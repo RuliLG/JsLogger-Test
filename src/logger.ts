@@ -3,7 +3,6 @@ import LoggerInterface from './loggers/LoggerInterface';
 
 class Logger {
     constructor(
-        private logLevel: LogLevel,
         private loggers: LoggerInterface[] = [],
     ) {
 
@@ -30,10 +29,6 @@ class Logger {
     }
 
     private log(message: string, logLevel: LogLevel, data?: any) {
-        if (this.logLevel > logLevel) {
-            return;
-        }
-
         for (const logger of this.loggers) {
             logger.log(message, logLevel, data);
         }

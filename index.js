@@ -1,6 +1,6 @@
 const { Logger, LogLevel, ConsoleLogger } = require('./dist/index').default;
 
-const logger = new Logger(LogLevel.debug);
+const logger = new Logger();
 logger.addLogger(new ConsoleLogger(LogLevel.debug));
 
 logger.debug('Debug message');
