@@ -28,7 +28,7 @@ class Logger {
         this.log(message, LogLevel.error, data);
     }
 
-    private log(message: string, logLevel: LogLevel, data?: any) {
+    protected log(message: string, logLevel: LogLevel, data?: any) {
         for (const logger of this.loggers) {
             logger.log(message, logLevel, data);
         }
